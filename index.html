@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sean Carpenter - Mechanical Engineer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-blue': '#005baa', // WVU Blue
+                        'brand-gold': '#eaaa00', // WVU Gold
+                        'navy': '#1a2a4c',
+                        'light-navy': '#2a3a5c',
+                        'slate-light': '#cbd5e1',
+                        'slate-dark': '#94a3b8',
+                    }
+                },
+            },
+        }
+    </script>
+    <!-- Custom Styles for Scrollbar -->
+    <style>
+        /* Simple scrollbar for Firefox */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #4a5a7c #1a2a4c;
+        }
+        /* Webkit scrollbar (Chrome, Safari) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a2a4c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #4a5a7c;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="bg-navy text-slate-light font-sans antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-navy/80 backdrop-blur-md sticky top-0 z-50 border-b border-light-navy/50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo / Name -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-xl font-bold text-white tracking-tight">Sean Carpenter</a>
+                </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-slate-dark hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="#about" class="text-slate-dark hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="#skills" class="text-slate-dark hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
+                        <a href="#projects" class="text-slate-dark hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
+                        <a href="#contact" class="text-slate-dark hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="bg-light-navy inline-flex items-center justify-center p-2 rounded-md text-slate-dark hover:text-white hover:bg-light-navy/70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon for menu (hamburger) -->
+                        <svg id="menu-icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Icon for close (X) -->
+                        <svg id="menu-icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-slate-dark hover:text-white hover:bg-light-navy block px-3 py-2 rounded-md text-base font-medium transition-colors">Home</a>
+                <a href="#about" class="text-slate-dark hover:text-white hover:bg-light-navy block px-3 py-2 rounded-md text-base font-medium transition-colors">About</a>
+                <a href="#skills" class="text-slate-dark hover:text-white hover:bg-light-navy block px-3 py-2 rounded-md text-base font-medium transition-colors">Skills</a>
+                <a href="#projects" class="text-slate-dark hover:text-white hover:bg-light-navy block px-3 py-2 rounded-md text-base font-medium transition-colors">Projects</a>
+                <a href="#contact" class="text-slate-dark hover:text-white hover:bg-light-navy block px-3 py-2 rounded-md text-base font-medium transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[calc(100vh-4rem)] flex items-center justify-center text-center py-20">
+            <div>
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+                    Sean Carpenter
+                </h1>
+                <h2 class="mt-3 text-2xl font-medium text-brand-gold tracking-tight sm:text-3xl">
+                    Mechanical Engineer | Computer Science
+                </h2>
+                <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-light">
+                    A senior at West Virginia University driven to solve real-world challenges by building robust solutions from concept to completion.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-navy bg-brand-gold hover:bg-brand-gold/90 transition-colors shadow-lg">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-brand-blue text-base font-medium rounded-md text-white bg-brand-blue hover:bg-brand-blue/90 transition-colors shadow-lg">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 sm:py-32">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+                <div class="md:col-span-1">
+                    <!-- Profile Picture Placeholder -->
+                    <div class="w-64 h-64 sm:w-80 sm:h-80 mx-auto bg-light-navy rounded-full flex items-center justify-center text-slate-dark text-center p-4 shadow-xl border-4 border-light-navy/50">
+                        <span class="text-lg">Professional Headshot Placeholder</span>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">About Me</h2>
+                    <p class="mt-4 text-lg text-slate-light">
+                        I’m in my final year of Mechanical Engineering at West Virginia University, driven to solve real-world challenges by building solutions from concept to completion.
+                    </p>
+                    <p class="mt-4 text-lg text-slate-light">
+                        My strength lies in managing the full project pipeline. I have followed ideas through different domains including Design, Simulation, Software, Networking, and Hardware Prototyping. I thrive on the challenge of making ideas come to reality and learning something new along the way.
+                    </p>
+                    <p class="mt-4 text-lg text-slate-light">
+                        The school and personal projects in this portfolio demonstrate my ability to find functional solutions to practical problems. I am actively seeking an entry-level engineering position where I can contribute my skills in design, analysis, and hands-on implementation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 sm:py-32 border-t border-light-navy/50">
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">My Technical Skills</h2>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Skill Card: Design -->
+                <div class="bg-light-navy p-6 rounded-lg shadow-xl">
+                    <h3 class="text-xl font-semibold text-white">Design</h3>
+                    <ul class="mt-4 list-disc list-inside space-y-2 text-slate-light">
+                        <li>Hand Sketches & Concepting</li>
+                        <li>3D CAD Modeling (SolidWorks, Fusion 360)</li>
+                        <li>PCB Design (KiCad)</li>
+                        <li>Design for Manufacturing (DFM)</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card: Simulation & Analysis -->
+                <div class="bg-light-navy p-6 rounded-lg shadow-xl">
+                    <h3 class="text-xl font-semibold text-white">Simulation & Analysis</h3>
+                    <ul class="mt-4 list-disc list-inside space-y-2 text-slate-light">
+                        <li>Finite Element Analysis (ANSYS)</li>
+                        <li>Computational Simulations (Python)</li>
+                        <li>System Dynamics</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card: Software -->
+                <div class="bg-light-navy p-6 rounded-lg shadow-xl">
+                    <h3 class="text-xl font-semibold text-white">Software</h3>
+                    <ul class="mt-4 list-disc list-inside space-y-2 text-slate-light">
+                        <li>Python</li>
+                        <li>Rust</li>
+                        <li>C++</li>
+                        <li>ROS (Robot Operating System)</li>
+                        <li>Natural Language Processing (NLP)</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card: Hardware & Prototyping -->
+                <div class="bg-light-navy p-6 rounded-lg shadow-xl">
+                    <h3 class="text-xl font-semibold text-white">Hardware & Prototyping</h3>
+                    <ul class="mt-4 list-disc list-inside space-y-2 text-slate-light">
+                        <li>3D Printing (FDM)</li>
+                        <li>Raspberry Pi</li>
+                        <li>Microcontrollers (Arduino, ESP)</li>
+                        <li>Electronics (Soldering, Wiring, ADC, PWM)</li>
+                        <li>Welding (MIG)</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card: Networking & IT -->
+                <div class="bg-light-navy p-6 rounded-lg shadow-xl">
+                    <h3 class="text-xl font-semibold text-white">Networking & IT</h3>
+                    <ul class="mt-4 list-disc list-inside space-y-2 text-slate-light">
+                        <li>VLAN Configuration</li>
+                        <li>NAS Server Management</li>
+                        <li>Linux (Arch, Ubuntu)</li>
+                        <li>Dual-Boot Systems</li>
+                    </ul>
+                </div>
+                
+                 <!-- Skill Card: Other -->
+                <div class="bg-light-navy p-6 rounded-lg shadow-xl">
+                    <h3 class="text-xl font-semibold text-white">Professional</h3>
+                    <ul class="mt-4 list-disc list-inside space-y-2 text-slate-light">
+                        <li>Project Leadership</li>
+                        <li>Collaborative Development (Git)</li>
+                        <li>Troubleshooting & Problem-Solving</li>
+                        <li>Self-Directed Learning</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 sm:py-32 border-t border-light-navy/50">
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">Projects Showcase</h2>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                
+                <!-- Project: BAJA DAQ -->
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    <div class="relative aspect-video bg-navy flex items-center justify-center text-slate-dark text-center p-4">
+                        <svg class="w-16 h-16 opacity-30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9A2.25 2.25 0 0 0 13.5 5.25h-9a2.25 2.25 0 0 0-2.25 2.25v9A2.25 2.25 0 0 0 4.5 18.75Z" /></svg>
+                        <span class="absolute text-sm">Video Placeholder (IMG_5835.MOV, IMG_5837.MOV)</span>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">WVU BAJA Data Acquisition (DAQ)</h3>
+                        <p class="mt-3 text-slate-light">
+                            Volunteered for the BAJA DAQ sub-team to collect sensor data on the off-road buggy. The system displays crucial information (RPM, brake pressure, etc.) to the driver via an LCD screen and is designed to alert the pit team of breakdowns. This involved hardware integration, 3D printed enclosures, and microcontroller programming.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project: High School RPi -->
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                     <div class="relative aspect-video bg-navy flex items-center justify-center text-slate-dark text-center p-4">
+                        <svg class="w-16 h-16 opacity-30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9A2.25 2.25 0 0 0 13.5 5.25h-9a2.25 2.25 0 0 0-2.25 2.25v9A2.25 2.25 0 0 0 4.5 18.75Z" /></svg>
+                        <span class="absolute text-sm">Video Placeholder (IMG_2334.MOV)</span>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">Raspberry Pi Motor Control</h3>
+                        <p class="mt-3 text-slate-light">
+                            A self-taught high school project to learn basic electronics. I wired an old drone motor in a 3D printed stand to a transistor, controlling it with a PWM pin on a Raspberry Pi. The motor speed was based on the input of a joystick, converted from analog to digital with an ADC converter. This project built a strong foundation in electronics that proved invaluable in college.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project: Claw Machine -->
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="aspect-square bg-navy flex items-center justify-center text-slate-dark text-center p-4">
+                            <svg class="w-12 h-12 opacity-30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>
+                            <span class="absolute text-sm">CAD Image 1 Placeholder</span>
+                        </div>
+                        <div class="aspect-square bg-navy flex items-center justify-center text-slate-dark text-center p-4">
+                            <svg class="w-12 h-12 opacity-30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>
+                            <span class="absolute text-sm">CAD Image 2 Placeholder</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">Claw Machine Design</h3>
+                        <p class="mt-3 text-slate-light">
+                            An ongoing personal project to design and build a full-size claw machine. This project highlights my ability to take an idea from a napkin sketch to a detailed 3D CAD model. It's a massive time commitment I'm chipping away at, allowing me to be creative and iterate on complex design solutions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project: GARY -->
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    <div class="aspect-video bg-navy flex items-center justify-center text-slate-dark text-center p-4">
+                        <svg class="w-16 h-16 opacity-30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 16.5V21m3.75-18v1.5m0 16.5V21m-9.75-6.75h1.5m15 0h-1.5m-12.75-3.75h1.5m15 0h-1.5M12 8.25h.008v.008H12V8.25Zm0 3.75h.008v.008H12v-.008Zm0 3.75h.008v.008H12v-.008Z" /></svg>
+                        <span class="absolute text-sm">AI/NLP Project</span>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">GARY (General Artificial Response Yapper)</h3>
+                        <p class="mt-3 text-slate-light">
+                            An attempt at a more efficient AI assistant. Instead of relying on a single large LLM, I am splitting the logic to integrate my own scripts and APIs. It uses an NLP pipeline (intent classifier, NLU, NER) to interpret input, run local scripts, or save reminders. A final, style-focused transformer mimics the user's attitude. The entire system is designed to run on a small, portable computer (LeRengade) for a challenge in efficiency.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project: LAC -->
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    <div class="aspect-video bg-navy flex items-center justify-center text-slate-dark text-center p-4">
+                         <svg class="w-16 h-16 opacity-30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h3.75" /></svg>
+                        <span class="absolute text-sm">Robotics/Autonomy Project</span>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">LAC (Lunar Autonomy Challenge)</h3>
+                        <p class="mt-3 text-slate-light">
+                            As project lead for the AIWVU club, I worked on this NASA/Johns Hopkins APL competition to create an autonomous system for navigating simulated lunar terrain. This was my first large collaborative coding project, using ROS to interface between a Python simulator and C++ (ORB-SLAMV3). I also solved complex networking challenges, setting up VLANs and VcXsrv to allow multiple users to access the single simulator laptop.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project: CarpClaw -->
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    <div class="aspect-video bg-navy flex items-center justify-center text-slate-dark text-center p-4">
+                        <svg class="w-16 h-16 opacity-30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21M9 17.25v-1.007a3 3 0 0 0-.879-2.122L7.5 15M9 17.25H5.501M15 17.25v1.007a3 3 0 0 0 .879 2.122L16.5 21M15 17.25v-1.007a3 3 0 0 1 .879-2.122L16.5 15M15 17.25h3.499M9 12c0 .621.504 1.125 1.125 1.125h2.75A1.125 1.125 0 0 0 14. 12v-1.5A1.125 1.125 0 0 0 12.875 9.375h-2.75A1.125 1.125 0 0 0 9 10.5v1.5Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12a8.25 8.25 0 1 0 16.5 0 8.25 8.25 0 0 0-16.5 0ZM12 1.5A10.5 10.5 0 1 1 1.5 12 10.5 10.5 0 0 1 12 1.5Z" /></svg>
+                        <span class="absolute text-sm">Arcade/Woodworking Project</span>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">CarpClaw Arcade Cabinet</h3>
+                        <p class="mt-3 text-slate-light">
+                            A high school project building a custom arcade cabinet for my father. I designed it to his specific elbow and eye height, sketching it by hand, creating a 1:12 scale model, and then a 1:1 scale profile. I integrated a Raspberry Pi, old monitor, speakers, and arcade controls. This project taught me a lot about woodworking, design for manufacturing, and repairability.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project: 3D Printing -->
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    <div class="aspect-video bg-navy flex items-center justify-center text-slate-dark text-center p-4">
+                        <svg class="w-16 h-16 opacity-30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
+                        <span class="absolute text-sm">Image Placeholder (3D Prints)</span>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">3D Printing & Prototyping</h3>
+                        <p class="mt-3 text-slate-light">
+                            I have used my personal 3D printer for several years to bring CAD solutions to life. This adds a critical skill to my workflow, allowing for rapid and creative prototyping. Troubleshooting this printer has taught me patience and given me a deep understanding of XYZ gantries and how environmental factors can affect print quality.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project: Welding/Soldering/PCB -->
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="aspect-square bg-navy flex items-center justify-center text-slate-dark text-center p-4">
+                            <svg class="w-12 h-12 opacity-30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>
+                            <span class="absolute text-sm">Weld/PCB Image Placeholder</span>
+                        </div>
+                        <div class="aspect-square bg-navy flex items-center justify-center text-slate-dark text-center p-4">
+                            <svg class="w-12 h-12 opacity-30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>
+                            <span class="absolute text-sm">Weld/PCB Image Placeholder</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">Hands-On Fabrication Skills</h3>
+                        <p class="mt-3 text-slate-light">
+                            During my time at WVU, I took every opportunity to learn new fabrication skills. I completed training in welding and grinding, as well as PCB printing and soldering. These experiences provided a valuable, practical understanding of how design decisions directly impact manufacturing time and difficulty.
+                        </smap>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 sm:py-32 border-t border-light-navy/50">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Get In Touch</h2>
+                <p class="mt-4 text-lg leading-8 text-slate-light max-w-2xl mx-auto">
+                    I'm actively seeking entry-level engineering roles and am excited to discuss how my skills can contribute to your team. Please feel free to reach out.
+                </p>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                    <!-- Placeholder Email -->
+                    <a href="mailto:sean.carpenter.email@example.com" class="text-lg font-semibold leading-6 text-brand-gold hover:text-brand-gold/90 transition-colors">
+                        sean.carpenter.email@example.com
+                    </a>
+                </div>
+                <!-- Social Links -->
+                <div class="mt-10 flex justify-center space-x-6">
+                    <a href="https://www.linkedin.com/in/your-profile-here" target="_blank" rel="noopener noreferrer" class="text-slate-dark hover:text-white transition-colors">
+                        <span class="sr-only">LinkedIn</span>
+                        <!-- LinkedIn SVG Icon -->
+                        <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.785-1.75-1.75s.784-1.75 1.75-1.75 1.75.785 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/your-profile-here" target="_blank" rel="noopener noreferrer" class="text-slate-dark hover:text-white transition-colors">
+                        <span class="sr-only">GitHub</span>
+                        <!-- GitHub SVG Icon -->
+                        <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.109-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy border-t border-light-navy/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <p class="text-center text-sm text-slate-dark">
+                &copy; <span id="current-year"></span> Sean Carpenter. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Current Year -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('menu-icon-open');
+            const iconClose = document.getElementById('menu-icon-close');
+
+            menuButton.addEventListener('click', () => {
+                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                menuButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+                iconOpen.classList.toggle('hidden');
+                iconClose.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when a link is clicked
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenu.classList.add('hidden');
+                    iconOpen.classList.remove('hidden');
+                    iconClose.classList.add('hidden');
+                });
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
