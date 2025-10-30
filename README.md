@@ -10,6 +10,7 @@ I am **Sean Carpenter**, a third year undergraduate student at West Virginia Uni
   ## Languages
   * Python
   * Rust
+  * C/C++
   * Java
   * JavaScript
   * HTML/CSS/Javascript
