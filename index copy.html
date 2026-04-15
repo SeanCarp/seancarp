@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sean Carpenter - Mechanical Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-blue': '#005baa', // WVU Blue
+                        'brand-gold': '#eaaa00', // WVU Gold
+                        'navy': '#1a2a4c',
+                        'light-navy': '#2a3a5c',
+                        'slate-light': '#cbd5e1',
+                        'slate-dark': '#94a3b8',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Simple scrollbar for Firefox */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #4a5a7c #1a2a4c;
+        }
+        /* Webkit scrollbar (Chrome, Safari) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a2a4c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #4a5a7c;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="bg-navy text-slate-light font-sans antialiased">
+
+    <header class="bg-navy/80 backdrop-blur-md sticky top-0 z-50 border-b border-light-navy/50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-xl font-bold text-white tracking-tight">Sean Carpenter</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-slate-dark hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="#about" class="text-slate-dark hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="#skills" class="text-slate-dark hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
+                        <a href="#projects" class="text-slate-dark hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
+                        <a href="#contact" class="text-slate-dark hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="bg-light-navy inline-flex items-center justify-center p-2 rounded-md text-slate-dark hover:text-white hover:bg-light-navy/70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-navy focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg id="menu-icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="menu-icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-slate-dark hover:text-white hover:bg-light-navy block px-3 py-2 rounded-md text-base font-medium transition-colors">Home</a>
+                <a href="#about" class="text-slate-dark hover:text-white hover:bg-light-navy block px-3 py-2 rounded-md text-base font-medium transition-colors">About</a>
+                <a href="#skills" class="text-slate-dark hover:text-white hover:bg-light-navy block px-3 py-2 rounded-md text-base font-medium transition-colors">Skills</a>
+                <a href="#projects" class="text-slate-dark hover:text-white hover:bg-light-navy block px-3 py-2 rounded-md text-base font-medium transition-colors">Projects</a>
+                <a href="#contact" class="text-slate-dark hover:text-white hover:bg-light-navy block px-3 py-2 rounded-md text-base font-medium transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <section id="home" class="min-h-[calc(100vh-4rem)] flex items-center justify-center text-center py-20">
+            <div>
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+                    Sean Carpenter
+                </h1>
+                <h2 class="mt-3 text-2xl font-medium text-brand-gold tracking-tight sm:text-3xl">
+                    Mechanical Engineer | Computer Science
+                </h2>
+                <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-light">
+                    A senior at West Virginia University driven to solve real-world challenges by building robust solutions from concept to completion.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-navy bg-brand-gold hover:bg-brand-gold/90 transition-colors shadow-lg">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-brand-blue text-base font-medium rounded-md text-white bg-brand-blue hover:bg-brand-blue/90 transition-colors shadow-lg">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 sm:py-32">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+                <div class="md:col-span-1">
+                    <div class="w-64 h-64 sm:w-80 sm:h-80 mx-auto bg-light-navy rounded-full overflow-hidden shadow-xl border-4 border-light-navy/50">
+                        <img src="Portfolio/NASA_profile_pic.jpg" alt="Sean Carpenter profile picture" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">About Me</h2>
+                    <p class="mt-4 text-lg text-slate-light">
+                        I’m in my final year of Mechanical Engineering at West Virginia University, driven to solve real-world challenges by building solutions from concept to completion.
+                    </p>
+                    <p class="mt-4 text-lg text-slate-light">
+                        My strength lies in managing the full project pipeline. I have followed ideas through different domains including Design, Simulation, Software, Networking, and Hardware Prototyping. I thrive on the challenge of making ideas come to reality and learning something new along the way.
+                    </p>
+                    <p class="mt-4 text-lg text-slate-light">
+                        The school and personal projects in this portfolio demonstrate my ability to find functional solutions to practical problems. I am actively seeking an entry-level engineering position where I can contribute my skills in design, analysis, and hands-on implementation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24 sm:py-32 border-t border-light-navy/50">
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">My Technical Skills</h2>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-light-navy p-6 rounded-lg shadow-xl">
+                    <h3 class="text-xl font-semibold text-white">Design</h3>
+                    <ul class="mt-4 list-disc list-inside space-y-2 text-slate-light">
+                        <li>Hand Sketches & Concepting</li>
+                        <li>3D CAD Modeling (SolidWorks, Inventor/Fusion 360, OnShape)</li>
+                        <li>PCB Design (KiCad)</li>
+                        <li>Design for Manufacturing (DFM)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-light-navy p-6 rounded-lg shadow-xl">
+                    <h3 class="text-xl font-semibold text-white">Simulation & Analysis</h3>
+                    <ul class="mt-4 list-disc list-inside space-y-2 text-slate-light">
+                        <li>Finite Element Analysis (ANSYS)</li>
+                        <li>Computational Simulations (Python)</li>
+                        <li>System Dynamics</li>
+                    </ul>
+                </div>
+
+                <div class="bg-light-navy p-6 rounded-lg shadow-xl">
+                    <h3 class="text-xl font-semibold text-white">Software</h3>
+                    <ul class="mt-4 list-disc list-inside space-y-2 text-slate-light">
+                        <li>Python</li>
+                        <li>Rust</li>
+                        <li>C++</li>
+                        <li>ROS (Robot Operating System)</li>
+                        <li>Natural Language Processing (NLP)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-light-navy p-6 rounded-lg shadow-xl">
+                    <h3 class="text-xl font-semibold text-white">Hardware & Prototyping</h3>
+                    <ul class="mt-4 list-disc list-inside space-y-2 text-slate-light">
+                        <li>3D Printing (FDM)</li>
+                        <li>Raspberry Pi</li>
+                        <li>Microcontrollers (Arduino, ESP)</li>
+                        <li>Electronics (Soldering, Wiring, ADC, PWM)</li>
+                        <li>Welding (MIG)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-light-navy p-6 rounded-lg shadow-xl">
+                    <h3 class="text-xl font-semibold text-white">Networking & IT</h3>
+                    <ul class="mt-4 list-disc list-inside space-y-2 text-slate-light">
+                        <li>VLAN Configuration</li>
+                        <li>NAS Server Management</li>
+                        <li>Linux (Arch, Ubuntu)</li>
+                        <li>Dual-Boot Systems</li>
+                    </ul>
+                </div>
+                
+                    <div class="bg-light-navy p-6 rounded-lg shadow-xl">
+                    <h3 class="text-xl font-semibold text-white">Professional</h3>
+                    <ul class="mt-4 list-disc list-inside space-y-2 text-slate-light">
+                        <li>Project Leadership</li>
+                        <li>Collaborative Development (Git)</li>
+                        <li>Troubleshooting & Problem-Solving</li>
+                        <li>Self-Directed Learning</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projects" class="py-24 sm:py-32 border-t border-light-navy/50">
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">Projects Showcase</h2>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    <div class="aspect-video bg-navy">
+                        <img src="Portfolio/Carp_Cade_Front.JPG" alt="CarpCade Arcade Cabinet" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">CarpCade Arcade Cabinet</h3>
+                        <p class="mt-3 text-slate-light">
+                            A high school project building a custom arcade cabinet for my father. I designed it to his specific elbow and eye height, sketching it by hand, creating a 1:12 scale model, and then a 1:1 scale profile. I integrated a Raspberry Pi, old monitor, speakers, and arcade controls. This project taught me a lot about woodworking, design for manufacturing, and repairability.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2 bg-navy">
+                        <img src="Portfolio/Gary_AI.png" class="w-full h-full object-cover rounded aspect-square">
+                        <img src="Portfolio/Gary_Hardware.JPG" alt="GARY AI Assistant Render" class="w-full h-full object-cover rounded aspect-square">
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">GARY (General Artificial Response Yapper)</h3>
+                        <p class="mt-3 text-slate-light">
+                            An attempt at a more efficient AI assistant. Instead of relying on a single large LLM, I am splitting the logic to integrate my own scripts and APIs. It uses an NLP pipeline (intent classifier, NLU, NER) to interpret input, run local scripts, or save reminders. A final, style-focused transformer mimics the user's attitude. The entire system is designed to run on a small, portable computer (LeRengade) for a challenge in efficiency.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2 bg-navy">
+                        <img src="Portfolio/LAC_Classifier.jpg" alt="LAC Classifier" class="w-full h-full object-cover rounded aspect-square">
+                        <img src="Portfolio/LAC_ORB.jpg" alt="LAC ORB" class="w-full h-full object-cover rounded aspect-square">
+                        <img src="Portfolio/LAC_SLAM.jpg" alt="LAC SLAM" class="w-full h-full object-cover rounded aspect-square">
+                        <img src="Portfolio/LAC_Presentation.jpg" alt="LAC Trajectory" class="w-full h-full object-cover rounded aspect-square">
+                        <img src="Portfolio/LAC_Diagram.JPG" alt="LAC Diagram" class="w-full h-full object-cover rounded aspect-square">
+                        <img src="Portfolio/LAC_Max_Rebo.jpg" alt="LAC Max Rebo team" class="w-full h-full object-cover rounded aspect-square">
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">LAC (Lunar Autonomy Challenge)</h3>
+                        <p class="mt-3 text-slate-light">
+                            As project lead for the AIWVU club, I worked on this NASA/Johns Hopkins APL competition to create an autonomous system for navigating simulated lunar terrain. This was my first large collaborative coding project, using ROS to interface between a Python simulator and C++ (ORB-SLAMV3). I also solved complex networking challenges, setting up VLANs and VcXsrv to allow multiple users to access the single simulator laptop. We were able to place 5th out 31 teams nationally!
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2 bg-navy">
+                        <img src="Portfolio/BAJA_Boot.JPG" alt="Baja DAQ Boot Screen" class="w-full h-full object-cover rounded">
+                        <img src="Portfolio/BAJA_Mix.JPG" alt="Baja DAQ Email Screen" class="w-full h-full object-cover rounded">
+                        <img src="Portfolio/BAJA_Data.JPG" alt="Baja DAQ Measurements" class="w-full h-full object-cover rounded">
+                        <img src="Portfolio/BAJA_Wiring.JPG" alt="Baja DAQ Proto Display" class="w-full h-full object-cover rounded">
+                        <video controls src="Portfolio/BAJA_Demo.mp4" class="w-full h-full object-cover rounded"></video>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">WVU BAJA Data Acquisition (DAQ)</h3>
+                        <p class="mt-3 text-slate-light">
+                            Volunteered for the BAJA DAQ sub-team to collect sensor data on the off-road buggy. The system displays crucial information (RPM, brake pressure, etc.) to the driver via an LCD screen and is designed to alert the pit team of breakdowns. This involved hardware integration, 3D printed enclosures, and microcontroller programming.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2 bg-navy">
+                        <img src="Portfolio/Claw_Machine_Assembly.jpeg" alt="Baja DAQ Boot Screen" class="w-full h-full object-cover rounded">
+                        <img src="Portfolio/Claw_Machine_Gantry.jpeg" alt="Baja DAQ Boot Screen" class="w-full h-full object-cover rounded">
+                        <img src="Portfolio/Claw_Machine_Front.jpeg" alt="Baja DAQ Boot Screen" class="w-full h-full object-cover rounded">
+                        <img src="Portfolio/Claw_Machine_Back.jpeg" alt="Baja DAQ Boot Screen" class="w-full h-full object-cover rounded">
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">Claw Machine Design</h3>
+                        <p class="mt-3 text-slate-light">
+                            An ongoing personal project to design and build a full-size claw machine. This project highlights my ability to take an idea from a napkin sketch to a detailed 3D CAD model. It's a massive time commitment I'm chipping away at, allowing me to be creative and iterate on complex design solutions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 p-2 bg-navy">
+                        <video controls src="Portfolio/RPI_Motor_Test.mp4" class="w-full h-full object-cover rounded aspect-video"></video>
+                        <img src="Portfolio/RPI_Drawing.JPG" alt="RPi Whiteboard Diagram" class="w-full h-full object-cover rounded aspect-video">
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">Raspberry Pi Motor Control</h3>
+                        <p class="mt-3 text-slate-light">
+                            A self-taught high school project to learn basic electronics. I wired an old drone motor in a 3D printed stand to a transistor, controlling it with a PWM pin on a Raspberry Pi. The motor speed was based on the input of a joystick, converted from analog to digital with an ADC converter. This project built a strong foundation in electronics that proved invaluable in college.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    <div class="aspect-video bg-navy flex items-center justify-center text-slate-dark text-center p-4">
+                        <svg class="w-16 h-16 opacity-30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
+                        <span class="absolute text-sm">Image Placeholder (3D Prints)</span>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">3D Printing & Prototyping</h3>
+                        <p class="mt-3 text-slate-light">
+                            I have used my personal 3D printer, Ender 3 V2, for several years to bring CAD solutions to life. This adds a critical skill to my workflow, allowing for rapid and creative prototyping. Troubleshooting this printer has taught me patience and given me a deep understanding of XYZ gantries and how environmental factors can affect print quality.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-light-navy rounded-lg shadow-xl overflow-hidden flex flex-col">
+                    <div class="grid grid-cols-2 gap-2 p-2 bg-navy">
+                        <div class="aspect-square flex flex-col gap-2">
+                             <img src="Portfolio/PCB_Trace.JPG" alt="PCB Trace Design" class="w-full h-full object-cover rounded">
+                             <img src="Portfolio/PCB_Finished.JPG" alt="Finished Soldered PCB" class="w-full h-full object-cover rounded">
+                        </div>
+                        <div class="aspect-square flex flex-col gap-2">
+                             <img src="Portfolio/Weld_Plate.png" alt="Welded Plate" class="w-full h-full object-cover rounded">
+                             <img src="Portfolio/Weld_Corner.png" alt="Welded Corner Joint" class="w-full h-full object-cover rounded">
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-semibold text-white">Hands-On Fabrication Skills</h3>
+                        <p class="mt-3 text-slate-light">
+                            During my time at WVU, I took every opportunity to learn new fabrication skills. I completed training in welding and grinding, as well as PCB printing and soldering. These experiences provided a valuable, practical understanding of how design decisions directly impact manufacturing time and difficulty.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 sm:py-32 border-t border-light-navy/50">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Get In Touch</h2>
+                <p class="mt-4 text-lg leading-8 text-slate-light max-w-2xl mx-auto">
+                    I'm actively seeking entry-level engineering roles and am excited to discuss how my skills can contribute to your team. Please feel free to reach out.
+                </p>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                    <a href="mailto:swcarpenter04@gmail.com" class="text-lg font-semibold leading-6 text-brand-gold hover:text-brand-gold/90 transition-colors">
+                        swcarpenter04@gmail.com
+                    </a>
+                </div>
+                <div class="mt-10 flex justify-center space-x-6">
+                    <a href="https://www.linkedin.com/in/sean-carpenter-388978255/" target="_blank" rel="noopener noreferrer" class="text-slate-dark hover:text-white transition-colors">
+                        <span class="sr-only">LinkedIn</span>
+                        <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.785-1.75-1.75s.784-1.75 1.75-1.75 1.75.785 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/SeanCarp" target="_blank" rel="noopener noreferrer" class="text-slate-dark hover:text-white transition-colors">
+                        <span class="sr-only">GitHub</span>
+                        <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.109-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-navy border-t border-light-navy/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <p class="text-center text-sm text-slate-dark">
+                &copy; <span id="current-year"></span> Sean Carpenter. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('menu-icon-open');
+            const iconClose = document.getElementById('menu-icon-close');
+
+            menuButton.addEventListener('click', () => {
+                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                menuButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+                iconOpen.classList.toggle('hidden');
+                iconClose.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when a link is clicked
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenu.classList.add('hidden');
+                    iconOpen.classList.remove('hidden');
+                    iconClose.classList.add('hidden');
+                });
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
