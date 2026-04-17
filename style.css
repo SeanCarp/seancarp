@@ -1,0 +1,38 @@
+/* Custom Scrollbars */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #4a5a7c #1a2a4c;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a2a4c;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4a5a7c;
+    border-radius: 20px;
+}
+
+/* Lightbox Trigger Styles */
+.project-media {
+    cursor: zoom-in;
+    transition: all 0.3s ease;
+}
+
+.project-media:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+/* Helper Classes for index.html cleanup */
+.nav-link {
+    @apply text-slate-dark hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors;
+}
+
+.mobile-nav-link {
+    @apply text-slate-dark hover:text-white hover:bg-light-navy block px-3 py-2 rounded-md text-base font-medium transition-colors;
+}
