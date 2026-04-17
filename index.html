@@ -53,6 +53,13 @@
             background-color: #4a5a7c;
             border-radius: 20px;
         }
+        .project-media {
+            cursor: zoom-in;
+            transition: transform 0.2s ease-in-out;
+        }
+        .project-media:hover {
+            transform: scale(1.02);
+        }
     </style>
 </head>
 <body class="bg-navy text-slate-light font-sans antialiased">
@@ -505,7 +512,50 @@
             // Set current year in footer
             document.getElementById('current-year').textContent = new Date().getFullYear();
         });
+
+        // --- Lightbox Logic ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxContent = document.getElementById('lightbox-content');
+
+        // 1. Identify all project images (and future videos)
+        const projectMedia = document.querySelectorAll('#projects img');
+
+        projectMedia.forEach(media => {
+            media.classList.add('project-media'); // Add our hover class
+            
+            media.addEventListener('click', () => {
+                // Clear previous content
+                lightboxContent.innerHTML = '';
+                
+                // Check if it's an image or an iframe (for your future video update)
+                if (media.tagName === 'IMG') {
+                    const newImg = document.createElement('img');
+                    newImg.src = media.src;
+                    newImg.className = 'max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl';
+                    lightboxContent.appendChild(newImg);
+                } 
+                
+                lightbox.classList.remove('hidden');
+            });
+        });
+
+        // Close lightbox on click or "Esc" key
+        lightbox.addEventListener('click', () => lightbox.classList.add('hidden'));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') lightbox.classList.add('hidden');
+        });
     </script>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-navy/95 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer">
+        <button class="absolute top-5 right-5 text-white hover:text-brand-gold">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <div id="lightbox-content" class="max-w-5xl w-full max-h-[90vh] flex justify-center">
+            </div>
+    </div>
 
 </body>
 </html>
