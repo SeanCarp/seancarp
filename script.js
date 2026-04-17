@@ -1,64 +1,60 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
     // 1. Mobile Menu Toggle
     const menuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const iconOpen = document.getElementById('menu-icon-open');
     const iconClose = document.getElementById('menu-icon-close');
 
-    menuButton.addEventListener('click', () => {
-        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-        menuButton.setAttribute('aria-expanded', !isExpanded);
-        mobileMenu.classList.toggle('hidden');
-        iconOpen.classList.toggle('hidden');
-        iconClose.classList.toggle('hidden');
-    });
+    if (menuButton) {
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        });
+    }
 
-    // 2. Footer Year
-    const yearSpan = document.getElementById('current-year');
-    if(yearSpan) yearSpan.textContent = new Date().getFullYear();
-
-    // 3. Lightbox Logic
+    // 2. Lightbox Logic
     const lightbox = document.getElementById('lightbox');
     const lightboxContent = document.getElementById('lightbox-content');
     const closeBtn = document.getElementById('close-lightbox');
 
-    // Select all images and future iframes within the projects section
-    const targets = document.querySelectorAll('#projects img, #projects iframe');
+    // Select all project media
+    const mediaElements = document.querySelectorAll('.project-media');
 
-    targets.forEach(el => {
-        el.classList.add('project-media');
-        
+    mediaElements.forEach(el => {
         el.addEventListener('click', (e) => {
-            e.stopPropagation();
-            lightboxContent.innerHTML = ''; // Clear previous
+            e.stopPropagation(); // Prevents background click issues
+            lightboxContent.innerHTML = '';
             
-            let clone;
+            let content;
             if (el.tagName === 'IMG') {
-                clone = document.createElement('img');
-                clone.src = el.src;
-                clone.className = 'max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl';
+                content = document.createElement('img');
+                content.src = el.src;
+                content.className = 'max-w-full max-h-[85vh] object-contain rounded shadow-2xl';
             } else if (el.tagName === 'IFRAME') {
-                clone = el.cloneNode(true);
-                clone.className = 'w-full aspect-video max-w-5xl rounded-lg shadow-2xl';
+                content = el.cloneNode(true);
+                content.className = 'w-full aspect-video max-w-4xl rounded shadow-2xl';
             }
 
-            lightboxContent.appendChild(clone);
+            lightboxContent.appendChild(content);
             lightbox.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
         });
     });
 
-    // Functions to close Lightbox
+    // Close Lightbox functions
     const closeLightbox = () => {
         lightbox.classList.add('hidden');
-        lightboxContent.innerHTML = ''; 
         document.body.style.overflow = 'auto'; // Re-enable scrolling
     };
 
-    closeBtn.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', closeLightbox); // Close when clicking background
-    
+    if (closeBtn) closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeLightbox();
+    });
+
+    if (lightbox) lightbox.addEventListener('click', closeLightbox);
+
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeLightbox();
     });
