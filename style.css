@@ -36,3 +36,11 @@ html {
 .mobile-nav-link {
     @apply text-slate-dark hover:text-white hover:bg-light-navy block px-3 py-2 rounded-md text-base font-medium transition-colors;
 }
+
+/* Fix for 2-column mobile layout overflow */
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
